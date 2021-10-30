@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script
+            src="https://kit.fontawesome.com/aa8cd70c81.js"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css"
+            integrity="sha512-r/Gan7PMSRovDus++vDS2Ayutc/cSdl268u047n4z+k7GYuR7Hiw71FsT3QQxdKJBVHYttOJ6IGLnlM9IoMToQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>Know Weather</title>
+    </head>
+    <body>
+        <div class="bg"></div>
+        <div class="main">
+            <!--Header Text-->
+            <div class="headerContainer">
+                <p>Philadelphia, PA</p>
+                <p id="LocationPrompt">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    Change Location
+                </p>
+                <form
+                    action="/"
+                    id="accordianForm"
+                    class="city-form"
+                    method="POST"
+                >
+                    <input type="text" name="city" id="city" />
+                    <button class="sub-btn" type="submit">Search</button>
+                </form>
+            </div>
+            <!--Info Body-->
+            <div class="infoContainer">
+                <div class="weatherContainer">
+                    <!--ICON-->
+                    <div class="weather">
+                        <i class="fa fa-sun"></i>
+                        <span>Sunny</span>
+                    </div>
+                    <!--Temperature-->
+                    <div class="temperature">30 <sup>o</sup>C</div>
+                </div>
+                <!--stats-->
+
+                <div class="stats">
+                    <!--Humidity-->
+                    <div class="statContent">
+                        <i class="fa fa-water"></i>
+                        <p>Humidity</p>
+                        <h1>50%</h1>
+                    </div>
+                    <!--Pressure-->
+                    <div class="statContent">
+                        <i class="fa fa-clock"></i>
+                        <p>Pressure</p>
+                        <h1>1008 PS</h1>
+                    </div>
+                    <!--Wind-->
+                    <div class="statContent">
+                        <i class="fa fa-wind"></i>
+                        <p>Wind</p>
+                        <h1>5 m/s</h1>
+                    </div>
+                </div>
+            </div>
+            <!--Forecast Section-->
+            <div class="forecast">
+                <div class="header">
+                    <h1 class="forecastHeader">5 Days Forecast</h1>
+                    <div class="forecastContainer">
+                        <!--Item 1-->
+                        <div class="forecastItem">
+                            <div class="forecastIcon">
+                                <img
+                                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                                />
+                            </div>
+                            <p class="forecastTemp">18 <sup>o</sup>C</p>
+                            <p class="forecastDesc">Rain</p>
+                            <p class="forecastDate">Wed, 18th Aug</p>
+                        </div>
+                        <!--Item 2-->
+                        <div class="forecastItem">
+                            <div class="forecastIcon">
+                                <img
+                                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                                />
+                            </div>
+                            <p class="forecastTemp">18 <sup>o</sup>C</p>
+                            <p class="forecastDesc">Rain</p>
+                            <p class="forecastDate">Wed, 18th Aug</p>
+                        </div>
+                        <!--Item 3-->
+                        <div class="forecastItem">
+                            <div class="forecastIcon">
+                                <img
+                                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                                />
+                            </div>
+                            <p class="forecastTemp">18 <sup>o</sup>C</p>
+                            <p class="forecastDesc">Rain</p>
+                            <p class="forecastDate">Wed, 18th Aug</p>
+                        </div>
+                        <!--Item 4-->
+                        <div class="forecastItem">
+                            <div class="forecastIcon">
+                                <img
+                                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                                />
+                            </div>
+                            <p class="forecastTemp">18 <sup>o</sup>C</p>
+                            <p class="forecastDesc">Rain</p>
+                            <p class="forecastDate">Wed, 18th Aug</p>
+                        </div>
+                        <!--Item 5-->
+                        <div class="forecastItem">
+                            <div class="forecastIcon">
+                                <img
+                                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                                />
+                            </div>
+                            <p class="forecastTemp">18 <sup>o</sup>C</p>
+                            <p class="forecastDesc">Rain</p>
+                            <p class="forecastDate">Wed, 18th Aug</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scripts-->
+        <script src="./js/index.js"></script>
+    </body>
+</html>

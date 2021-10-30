@@ -1,0 +1,193 @@
+/* Montserrat Font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+/* ITC Avant Garde */
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    color: white;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+p,
+h1 {
+    margin: 0;
+}
+.bg {
+    /* Set bg image here */
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #202125;
+    z-index: -1;
+}
+.main {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+}
+/* Header section */
+.headerContainer {
+    text-align: center;
+}
+.headerContainer p {
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.city-form {
+    overflow: hidden;
+    height: 0;
+    transition: all 0.2s ease-in-out;
+}
+#LocationPrompt {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+#LocationPrompt:hover {
+    text-decoration: underline;
+}
+input[type="text"] {
+    display: block;
+    margin: 0.8rem auto;
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.25rem 1rem;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 15px;
+}
+.sub-btn {
+    background-color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+/* Info Body */
+.infoContainer {
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.weatherContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.weather {
+    display: flex;
+    justify-content: space-between;
+}
+.weather i {
+    font-size: 1.64rem;
+    margin-right: 1rem;
+}
+.weather span {
+    font-size: 1.64rem;
+}
+.temperature {
+    font-family: "montserrat";
+    font-weight: 600;
+    font-size: 4rem;
+}
+.stats {
+    margin-block: 2rem;
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.statContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.statContent p {
+    font-family: "Montserrat";
+    font-size: 1rem;
+    margin-block: 1rem;
+}
+.statContent h1 {
+    font-size: 2rem;
+}
+/*Forecast*/
+.forecastHeader {
+    font-family: "montserrat";
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 2rem;
+}
+.forecastHeader::before,
+.forecastHeader::after {
+    position: absolute;
+    top: 40%;
+    overflow: hidden;
+    width: 15%;
+    height: 3px;
+    border-radius: 5px;
+    content: "\a0";
+    background-color: white;
+}
+h1:before {
+    left: 9%;
+    text-align: right;
+}
+h1:after {
+    right: 9%;
+}
+.forecastContainer {
+    margin: 2rem 2rem;
+}
+
+.forecastItem {
+    width: 92%;
+    /* border: 2px red solid; */
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 1fr;
+    gap: 0.5rem 1rem;
+    align-items: start;
+    justify-items: center;
+    padding: 1rem;
+    margin-block: 1.5rem;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.forecastItem:hover {
+    background-color: #7772;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.133);
+}
+.forecastIcon {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+.forecastIcon > img {
+    transform: translateX(-10%) translateY(-10%) scale(1.4);
+}
+.forecastTemp {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+.forecastDesc {
+    font-size: 1.7rem;
+}
+.forecastDate {
+    margin-top: 0.7rem;
+    font-size: 1rem;
+}
+/* Desktop View */
