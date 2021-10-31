@@ -19,7 +19,6 @@
         <title>Know Weather</title>
     </head>
     <body>
-        <div class="bg"></div>
         <div class="main">
             <!--Header Text-->
             <div class="headerContainer">
@@ -40,33 +39,38 @@
             </div>
             <!--Info Body-->
             <div class="infoContainer">
-                <div class="weatherContainer">
+                <div>
                     <!--ICON-->
                     <div class="weather">
-                        <i class="fa fa-sun"></i>
+                        <i class="wi wi-day-sunny"></i>
                         <span>Sunny</span>
                     </div>
                     <!--Temperature-->
                     <div class="temperature">30 <sup>o</sup>C</div>
                 </div>
-                <!--stats-->
-
-                <div class="stats">
-                    <!--Humidity-->
-                    <div class="statContent">
-                        <i class="fa fa-water"></i>
+            </div>
+            <!--stats-->
+            <div class="stats">
+                <!--Humidity-->
+                <div class="statContent">
+                    <i class="wi wi-humidity"></i>
+                    <div class="stat-text">
                         <p>Humidity</p>
                         <h1>50%</h1>
                     </div>
-                    <!--Pressure-->
-                    <div class="statContent">
-                        <i class="fa fa-clock"></i>
+                </div>
+                <!--Pressure-->
+                <div class="statContent">
+                    <i class="wi wi-barometer"></i>
+                    <div class="stat-text">
                         <p>Pressure</p>
                         <h1>1008 PS</h1>
                     </div>
-                    <!--Wind-->
-                    <div class="statContent">
-                        <i class="fa fa-wind"></i>
+                </div>
+                <!--Wind-->
+                <div class="statContent">
+                    <i class="wi wi-strong-wind"></i>
+                    <div class="stat-text">
                         <p>Wind</p>
                         <h1>5 m/s</h1>
                     </div>
@@ -79,55 +83,35 @@
                     <div class="forecastContainer">
                         <!--Item 1-->
                         <div class="forecastItem">
-                            <div class="forecastIcon">
-                                <img
-                                    src="http://openweathermap.org/img/wn/10d@2x.png"
-                                />
-                            </div>
+                            <i class="forecastIcon wi wi-day-rain"></i>
                             <p class="forecastTemp">18 <sup>o</sup>C</p>
                             <p class="forecastDesc">Rain</p>
                             <p class="forecastDate">Wed, 18th Aug</p>
                         </div>
                         <!--Item 2-->
                         <div class="forecastItem">
-                            <div class="forecastIcon">
-                                <img
-                                    src="http://openweathermap.org/img/wn/10d@2x.png"
-                                />
-                            </div>
+                            <i class="forecastIcon wi wi-day-rain"></i>
                             <p class="forecastTemp">18 <sup>o</sup>C</p>
                             <p class="forecastDesc">Rain</p>
                             <p class="forecastDate">Wed, 18th Aug</p>
                         </div>
                         <!--Item 3-->
                         <div class="forecastItem">
-                            <div class="forecastIcon">
-                                <img
-                                    src="http://openweathermap.org/img/wn/10d@2x.png"
-                                />
-                            </div>
+                            <i class="forecastIcon wi wi-day-rain"></i>
                             <p class="forecastTemp">18 <sup>o</sup>C</p>
                             <p class="forecastDesc">Rain</p>
                             <p class="forecastDate">Wed, 18th Aug</p>
                         </div>
                         <!--Item 4-->
                         <div class="forecastItem">
-                            <div class="forecastIcon">
-                                <img
-                                    src="http://openweathermap.org/img/wn/10d@2x.png"
-                                />
-                            </div>
+                            <i class="forecastIcon wi wi-day-rain"></i>
                             <p class="forecastTemp">18 <sup>o</sup>C</p>
                             <p class="forecastDesc">Rain</p>
                             <p class="forecastDate">Wed, 18th Aug</p>
                         </div>
                         <!--Item 5-->
                         <div class="forecastItem">
-                            <div class="forecastIcon">
-                                <img
-                                    src="http://openweathermap.org/img/wn/10d@2x.png"
-                                />
-                            </div>
+                            <i class="forecastIcon wi wi-day-rain"></i>
                             <p class="forecastTemp">18 <sup>o</sup>C</p>
                             <p class="forecastDesc">Rain</p>
                             <p class="forecastDate">Wed, 18th Aug</p>
@@ -135,8 +119,51 @@
                     </div>
                 </div>
             </div>
+            <div class="color-overlay"></div>
         </div>
+
         <!-- Scripts-->
+        <script>
+            //accessing main bg element
+            const main = document.getElementsByClassName("main")[0];
+            const overlay = document.getElementsByClassName("color-overlay")[0];
+
+            //Finding time
+            // "March 13, 08 21:20"
+            const time = new Date();
+            const hours = time.getHours();
+            let period = "";
+            console.log(hours);
+            if (hours >= 6 && hours <= 8) {
+                period = "dawn";
+                overlay.style.backgroundColor = "#17021e6c";
+            } else if (hours > 8 && hours <= 12) {
+                period = "morning";
+                overlay.style.backgroundColor = "#03142880";
+            } else if (hours > 12 && hours <= 17) {
+                period = "noon";
+                overlay.style.backgroundColor = "#36201366";
+            } else if (hours > 17 && hours <= 19) {
+                period = "dusk";
+                overlay.style.backgroundColor = "#44051d59";
+            } else {
+                period = "night";
+                overlay.style.backgroundColor = "#030f1c99";
+            }
+            //generating random number from 1 to 2
+            let i = Math.floor(Math.random() * 2) + 1;
+            //Final method and event Listener to change images acc to device
+            const matchFunction = (x) => {
+                if (x.matches) {
+                    main.style.backgroundImage = `url(./css/images/mobile/${period}-${i}.jpg)`;
+                } else {
+                    main.style.backgroundImage = `url(./css/images/desktop/${period}-${i}.jpg)`;
+                }
+            };
+            let x = window.matchMedia("(max-width: 1024px)");
+            matchFunction(x);
+            x.addEventListener("change", matchFunction);
+        </script>
         <script src="./js/index.js"></script>
     </body>
 </html>
