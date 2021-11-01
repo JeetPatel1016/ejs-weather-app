@@ -264,7 +264,7 @@ h1:after {
     }
     .forecastItem {
         height: 12rem;
-        width: 12rem;
+        width: 10rem;
         place-items: start;
         grid-template-areas:
             "forecast_icon"
